@@ -11,13 +11,13 @@ class MyApp(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
 
-        # Load the environment model.
-        self.scene = self.loader.loadModel("models/environment")
-        # Reparent the model to render.
-        self.scene.reparentTo(self.render)
-        # Apply scale and position transforms on the model.
-        self.scene.setScale(0.25, 0.25, 0.25)
-        self.scene.setPos(-8, 42, 0)
+        # # Load the environment model.
+        # self.scene = self.loader.loadModel("models/environment")
+        # # Reparent the model to render.
+        # self.scene.reparentTo(self.render)
+        # # Apply scale and position transforms on the model.
+        # self.scene.setScale(0.25, 0.25, 0.25)
+        # self.scene.setPos(-8, 42, 0)
 
         # Add the CameraTask procedure to the task manager.
         self.taskMgr.add(self.CameraTask, "CameraTask")
@@ -29,6 +29,11 @@ class MyApp(ShowBase):
         self.pandaActor.reparentTo(self.render)
         # Loop its animation.
         self.pandaActor.loop("walk")
+
+        self.something = loadObject('models/zdjecie')
+        self.something.reparentTo(self.render)
+        self.something.setScale(0.01, 0.01, 0.01)
+        self.something.setPos(-8, 42, 0)
 
     # Define a procedure to move the camera.
     def CameraTask(self, task):
