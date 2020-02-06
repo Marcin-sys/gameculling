@@ -21,7 +21,8 @@ class MyApp(ShowBase):
         self.teapot = self.loader.load_model("models/teapot_n_glass.obj")
         self.teapot.reparentTo(self.render)
         self.teapot.setPos(-10, 6, 0)
-        self.teapot.setHpr(0, 90, 0)
+        self.teapot.setHpr(0, 90, 320)
+        self.teapot.setColor(1, 0.6, 0.8, 0.7)
 
         # Apply scale and position transforms on the model.
         self.scene.setScale(0.25, 0.25, 0.25)
