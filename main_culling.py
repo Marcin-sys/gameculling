@@ -1,13 +1,13 @@
 
 from direct.showbase.ShowBase import ShowBase
-base = ShowBase()
-
+# base = ShowBase()
+from panda3d.core import *
 
 from direct.task import Task
 from direct.actor.Actor import Actor
 # import direct.directbase.DirectStart
-# from panda3d.core import *
 
+loadPrcFileData("", "load-file-type p3assimp")  #here check
 
 class MyApp(ShowBase):
 
@@ -16,8 +16,13 @@ class MyApp(ShowBase):
 
         # Load the environment model.
         self.scene = self.loader.loadModel("models/environment")
-        # Reparent the model to render.
         self.scene.reparentTo(self.render)
+        # Load Model Teapot to scene
+        self.teapot = self.loader.load_model("models/teapot_n_glass.obj")
+        self.teapot.reparentTo(self.render)
+        self.teapot.setPos(-10, 6, 0)
+        self.teapot.setHpr(0, 90, 0)
+
         # Apply scale and position transforms on the model.
         self.scene.setScale(0.25, 0.25, 0.25)
         self.scene.setPos(-8, 42, 0)
