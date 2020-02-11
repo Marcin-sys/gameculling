@@ -1,0 +1,3 @@
+- issued with manual 3dpanda 
+- not updated manual
+- not working code from manual

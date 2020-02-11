@@ -2,10 +2,9 @@
 from direct.showbase.ShowBase import ShowBase
 # base = ShowBase()
 from panda3d.core import *
-
 from direct.task import Task
 from direct.actor.Actor import Actor
-# import direct.directbase.DirectStart
+
 
 loadPrcFileData("", "load-file-type p3assimp")  #here check
 
@@ -38,6 +37,7 @@ class MyApp(ShowBase):
         self.pandaActor.reparentTo(self.render)
         # Loop its animation.
         self.pandaActor.loop("walk")
+
 
 
     # Define a procedure to move the camera.
